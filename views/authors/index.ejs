@@ -1,14 +1,29 @@
 <h2> Search Authors </h2>
-<form action = "/authors" method="GET">
-    <label> Name </label>
-    <input type="text" name="name" value= "<%= searchOptions.name %>">
-    <button type="submit"> Search </button>
-</form>
-<br>
-<% authors.forEach(author => { %>
-   <div><%= author.name %></div>
-   <a href="/authors/<%= author.id%>"> View </a>
-   <a href="/authors/<%= author.id%>/edit"> Edit </a>
-   <%- include('../partials/deleteForm' ,
-            {url : `/authors/${author.id}` }) %>
-<% }); %>
+<div class="authors-grid">
+    <form action = "/authors" method="GET" class="card card-bg">
+        <div class="card-item">
+            <label for="name"> Name </label>
+            <input type="text" name="name" id="name" value= "<%= searchOptions.name %>" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary"> Search </button>
+    </form>
+
+
+<ul class="list-group author-list-control">
+    <li class="list-group-item list-title">Author List</li>
+
+    <% authors.forEach(author => { %>
+        <li class="list-group-item each-author">
+        <%= author.name %>
+            <div class="author-button-group">
+                    <a href="/authors/<%= author.id%>" class="btn btn-primary-outline button-l-space"> View </a>
+                    <a href="/authors/<%= author.id%>/edit" class="btn btn-primary-outline button-l-space"> Edit </a>
+
+                    <div class="button-l-space">
+                        <%- include('../partials/deleteForm.ejs' ,
+                            {url : `/authors/${author.id}` , btnStyle: "btn btn-secondary-outline" }) %>
+                    </div>
+            </div>
+        </li>
+   <% }) %>
+</div>

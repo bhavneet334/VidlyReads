@@ -1,0 +1,17 @@
+$form-bg-clr: #ffd1c4;
+
+.card {
+    display: block;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px 0 rgb(97, 95, 95);
+}
+
+.card-bg {
+    background-color: rgba($color: $form-bg-clr, $alpha: .3);
+}
+
+.card-item {
+    margin-bottom: 1rem;
+}

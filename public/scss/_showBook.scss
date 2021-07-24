@@ -1,0 +1,43 @@
+.book-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.book-container {
+    margin: 1rem 0;
+}
+
+.book-cover {
+    height: $img-small-height;
+    width: $img-small-width;
+}
+
+.show-book-button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem 0;
+
+    & > * {
+        margin-bottom: 1rem;
+    }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 1rem;
+    
+    
+
+    .book-description {
+        grid-column: 1 / -1;
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}

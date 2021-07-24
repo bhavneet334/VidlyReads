@@ -86,7 +86,7 @@ router.put('/:id',async(req,res)=>{
         book.publishDate = new Date(req.body.publishDate),
         book.pageCount = req.body.pageCount,
         book.description = req.body.description
-        if(req.body.cover != null && req.body.cover!==''){
+        if(req.body.cover != null && req.body.cover!==""){
               saveCover(book, req.body.cover)
         }
         await book.save()
@@ -95,7 +95,8 @@ router.put('/:id',async(req,res)=>{
          if(book!=null){
             renderEditPage(res, book, true);
          }else{
-             redirect('/')
+            console.log("cannot find this book in the database");
+            res.redirect("/books");
          }
       }
 });

@@ -1,0 +1,32 @@
+.footer {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: $clr-purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: auto;
+
+}
+
+.slogen {
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgb(90, 87, 87);
+
+    .slogen-logo {
+        font-family: $font-logo;
+        font-size: 1rem;
+        text-align: center;
+        color: $clr-pink;
+    }
+
+}
+
+.copyright{
+    align-self: flex-end;
+    font-size: 1rem;
+    font-family: $font-round;
+}

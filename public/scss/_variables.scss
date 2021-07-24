@@ -1,0 +1,31 @@
+/* Color Theme Swatches in Hex */
+$clr-purple: #aea3d9;
+$clr-greyblue: #8bb4d9;
+$clr-lightblue: #62c3d9;
+$clr-grey: #aebfbf;
+$clr-pink: #d9a3a3;
+
+$dark-grey: #404040;
+$light-grey: #cccccc;
+$focus-blue: #0066ff;
+$warning-red: #b30000;
+
+
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Prata&family=Raleway&display=swap");
+
+$font-logo: "Pacifico", cursive;
+$font-round: "Raleway", sans-serif;
+$font-classic: "Prata", serif;
+
+
+// break points
+$break-large: 900px;
+$break-small: 700px;
+
+
+// image size
+$img-small-width: 100px;
+$img-large-width: 200px;
+$img-small-height: 150px;
+$img-large-height: 250px;

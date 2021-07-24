@@ -1,6 +1,10 @@
 <h2>Edit Book</h2>
-<form action ="/books/<%= book.id %>?_method=PUT" method="post" >
+<form action ="/books/<%= book.id %>?_method=PUT" method="post" class=" card-bg">
+
      <%- include("_form_fields") %>
-     <a href = "/books">Cancel</a>
-     <button type="submit">Update</button>
+     <div class="btn-horizontal-group">
+          <a href = "/books" class="btn btn-secondary">Cancel</a>
+          <button type="submit"  class="btn btn-primary">Update</button>
+     </div>
+     
 </form>
