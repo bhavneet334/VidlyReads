@@ -1,18 +1,32 @@
+<<<<<<< HEAD
 <!-- Title -->
+=======
+<!-- title -->
+>>>>>>> origin/master
 <div class="card-item">
     <label for="title"> Title</label>
     <input type="text" name="title" value="<%= book.title %>">    
 </div>
 
+<<<<<<< HEAD
 <!-- Author -->
+=======
+<!-- author -->
+>>>>>>> origin/master
 <div class="card-item">
     <label for="author"> Author</label>
     <select name="author" id="author">
     <% authors.forEach(author => { %>
         <% if(author.id === book.author) { %>
+<<<<<<< HEAD
             <option selected value="<%=author.id%>"><%=author.name%></option>
         <% } else { %>
             <option value="<%= author.id%>"><%=author.name%></option>
+=======
+            <option selected label="<%=author.name%>" value="<%=author.id%>" >
+        <% } else { %>
+            <option label="<%=author.name%>" value="<%= author.id%>" >
+>>>>>>> origin/master
         <% } %>
     <% }) %>
     </select>
@@ -22,6 +36,7 @@
 <div class="card-item">
     <label> Publish Date</label>
     <input type="date" name="publishDate" 
+<<<<<<< HEAD
             value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
 </div>
 
@@ -66,3 +81,30 @@ document.getElementById('coverImage').addEventListener('change', function() {
     reader.readAsDataURL(file);
 });
 </script>
+=======
+            value="<%= book.publishDate == null? '' : 
+            book.publishDate.toISOString().split('T')[0]%> ">
+</div>
+
+<!-- page count -->
+<div class="card-item">
+    <label for="pageCount"> Page Count </label>
+    <input type="number" name="pageCount" min="1" value="<%=book.pageCount%> ">
+</div>
+
+
+<div class="cover-and-desc-container">
+
+    <!-- cover image -->
+    <div class="card-item vertical-display cover-drop">
+        <label for="coverImage">Cover:</label>
+        <input type="file" id="coverImage" name="coverImage" class="filepond" />
+    </div>
+
+    <!-- description -->
+    <div class="card-item vertical-display">
+        <label for="description"> Description </label>
+        <textarea type="text" name="description" id="description"><%=book.description%></textarea>
+    </div>
+</div>
+>>>>>>> origin/master

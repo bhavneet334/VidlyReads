@@ -34,7 +34,10 @@ router.get('/new' ,async(req,res)=>{
 
 //Create Book Route
 router.post('/',async(req,res)=>{
+<<<<<<< HEAD
     console.log("Request body:", req.body);
+=======
+>>>>>>> origin/master
     const book = new Book({
         title: req.body.title,
         author:req.body.author,
@@ -43,7 +46,11 @@ router.post('/',async(req,res)=>{
         description:req.body.description
     })
 
+<<<<<<< HEAD
     saveCover(book, req.body.coverImage)
+=======
+    saveCover(book , req.body.cover)
+>>>>>>> origin/master
 
     try{
         const newBook = await book.save();
@@ -96,12 +103,17 @@ router.put('/:id',async(req,res)=>{
          if(book!=null){
             renderEditPage(res, book, true);
          }else{
+<<<<<<< HEAD
             console.log("Cannot find this book in the database");
+=======
+            console.log("cannot find this book in the database");
+>>>>>>> origin/master
             res.redirect("/books");
          }
       }
 });
 
+<<<<<<< HEAD
 router.delete('/:id', async (req, res) => {
     let book;
     try {
@@ -120,6 +132,25 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+=======
+router.delete('/:id' , async(req,res)=> {
+    let book
+    try{
+        book = await Book.findById(req.params.id)
+        await book.remove()
+        res.redirect('/books')
+    }catch{
+       if(book!=null){
+          res.render('books/show' , {
+              book : book,
+              errorMessage : 'Could not remove book'
+          })
+       }else{
+           res.redirect('/')
+       }
+    }
+})
+>>>>>>> origin/master
 
 async function renderNewPage(res, book, hasError=false){
     renderFormPage(res,book,'new', hasError)
@@ -150,6 +181,7 @@ async function renderFormPage(res, book, form , hasError=false){
       }
 }
 
+<<<<<<< HEAD
 
 function saveCover(book, coverEncoded) {
     if (coverEncoded == null) return;
@@ -164,5 +196,15 @@ function saveCover(book, coverEncoded) {
     }
   }
   
+=======
+function saveCover(book , coverEncoded){
+    if(coverEncoded==null) return
+    const cover = JSON.parse(coverEncoded)
+    if(cover!=null && imageMimeTypes.includes(cover.type) ){
+         book.coverImage = new Buffer.from(cover.data, 'base64')
+         book.coverImageType = cover.type
+    }
+}
+>>>>>>> origin/master
 
 module.exports = router;
