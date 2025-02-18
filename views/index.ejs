@@ -1,0 +1,26 @@
+
+<div class="inner-container">
+    <div class="bg-title-large" style="margin-top: 50px;"> RECENTLY ADDED COLLECTION !</div>
+    <!-- <div class="bg-title-small">
+    </div> -->
+
+    <div class="book-grid">
+        <% books.forEach(book => { %>
+        <div class="bp-cover-container">
+            <a href="/books/<%= book._id %>" >
+                <img
+                    src="<%= book.coverImagePath %>"
+                    alt="recent book"
+                    class="bp-book-cover"
+                />
+            </a>
+            <div class="hover-bg">
+                Read More
+            </div>
+            <div class="bp-title"><%= book.title %></div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+

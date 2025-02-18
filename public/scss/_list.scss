@@ -1,0 +1,30 @@
+$list-border-radius: .5rem;
+
+.list-group {
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-item{
+    text-decoration: none;
+    padding: .5rem 1rem;
+    display: block;
+    color: black;
+    border: 1px solid rgba($color: #000000, $alpha: .125);
+    background-color: white;
+
+    &:first-child {
+        border-top-left-radius: $list-border-radius;
+        border-top-right-radius: $list-border-radius;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: $list-border-radius;
+        border-bottom-right-radius: $list-border-radius;
+    }
+}
+
+.list-title {
+    background-color: $clr-lightblue;
+}
+

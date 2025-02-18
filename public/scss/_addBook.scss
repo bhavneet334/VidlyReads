@@ -1,0 +1,72 @@
+.card-item > input,
+.card-item > select {
+    margin-left: 1rem;
+    // border: 1px solid $dark-grey;
+}
+
+.cover-and-desc-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.vertical-display {
+    display: flex;
+    flex-direction: column;
+
+    & > label {
+        margin-bottom: 0.5rem;
+    }
+
+    .filepond {
+        &--root {
+            font-family: inherit;
+            margin-bottom: 0;
+        }
+
+        &--panel-root {
+            background-color: rgba($color: $clr-pink, $alpha: 0.5);
+            border: 2px solid $light-grey;
+            padding: 1rem 0;
+        }
+
+        &--drop-label {
+            color: black;
+        }
+    }
+
+    textarea {
+        flex-grow: 1;
+        text-align: left;
+        border-radius: 0.5rem;
+        resize: none;
+        outline: none;
+        padding: 0.5rem;
+        min-height: 200px;
+        border: 2px solid $light-grey;
+
+        &:focus {
+            border: 2px solid $focus-blue;
+        }
+    }
+}
+
+.cover-drop {
+    justify-content: flex-start;
+    width: 150px;
+}
+
+.button-right-align {
+    display: flex;
+    justify-content: flex-end;
+
+    & > * {
+        margin-left: 1rem;
+    }
+}
+
+@media only screen and (max-width: $break-large) {
+    .cover-and-desc-container {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+}

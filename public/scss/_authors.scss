@@ -1,0 +1,36 @@
+.authors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    justify-content: space-between;
+}
+
+.author-list-control {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.each-author {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-button-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-l-space {
+    margin-left: 0.5rem;
+}
+
+@media only screen and (max-width: 900px) {
+    .authors-grid {
+        grid-template-columns: 1fr;
+        justify-self: center;
+        align-items: center;
+        row-gap: 2rem;
+    }
+}

@@ -1,0 +1,37 @@
+
+.author-buttons {
+    display: flex;
+    justify-content: flex-start;
+
+    & > * {
+        margin-right: 1rem;
+    }
+}
+
+.authors-book-container {
+    display: inline-block;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
+
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+
+    img {
+        height: $img-small-height;
+        width: $img-small-width;
+    }
+}
+
+.book-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    & > * {
+        margin: 0 1rem;
+    }
+}

@@ -1,0 +1,9 @@
+.edit-author-form {
+    width: 100%;
+}
+
+@media screen and (min-width: $break-large) {
+    .edit-author-form {
+        width: 50%;
+    }
+}

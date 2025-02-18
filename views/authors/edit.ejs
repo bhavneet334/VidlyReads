@@ -1,0 +1,9 @@
+<h2>Edit Author</h2>
+<form action ="/authors/<%= author.id %>?_method=put" method="POST"  class="card card-bg edit-author-form">
+
+     <%- include("./_form_fields.ejs") %>
+     <div class="btn-horizontal-group">
+          <a href = "/authors/<%= author.id %>" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary"> Update </button>
+     </div>
+</form>

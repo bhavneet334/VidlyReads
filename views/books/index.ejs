@@ -1,0 +1,32 @@
+<h2> Search Books </h2>
+<div class="books-page-grid" >
+    <form action = "/books" method="GET" class="card card-bg">
+        <div class="card-item">
+            <label for="title"> Title </label>
+            <input type="text" name="title" value= "<%= searchOptions.title%>">
+        </div>
+        <div class="card-item">
+            <label for="title"> Published After </label>
+            <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter%>">
+        </div> 
+        <div class="card-item">
+            <label for="title"> Published Before </label>
+            <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore%>">
+        </div> 
+        <button type="submit" class="btn btn-primary"> Search </button>
+    </form>
+  
+
+    <div class="book-display card card-bg">
+        <h3 class="book-recommendation-title">Recommendations</h3>
+            <% books.forEach(book => { %>
+                <div>
+                    <h5 class="book-display-title"><%= book.title %></h5>
+                    <a href="/books/<%= book.id%>" >
+                        <img height="150" width="100" src="<%= book.coverImagePath %>" class="book-display-cover">
+                    </a>
+                </div>
+             <% }) %>
+    </div>
+
+</div>
