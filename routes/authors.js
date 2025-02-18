@@ -33,7 +33,6 @@ router.post('/', async(req,res)=>{
     try{
         const newAuthor = await author.save();
         res.redirect(`authors/${newAuthor.id}`)
-<<<<<<< HEAD
     } catch (err) {
         console.error("Error creating author:", err);  // <-- This logs the actual error to terminal
         res.render('authors/new', {
@@ -42,14 +41,6 @@ router.post('/', async(req,res)=>{
         });
     }
       
-=======
-    }catch{
-        res.render('authors/new' ,{
-            author : author,
-            errorMessage : 'Error Creating Author'
-        });
-    }
->>>>>>> origin/master
 })
 
 router.get('/:id' , async(req,res) => {
